@@ -16,7 +16,7 @@ COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the application code into the container
-COPY venv /app/
+COPY . /app/
 
 # Expose the port your application runs on
 EXPOSE 8080
