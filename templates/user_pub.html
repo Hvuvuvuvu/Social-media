@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>Мої пости</h1>
+    {% if pubs %}
+        <ul>
+            {% for pub in pubs %}
+                <li>
+                    <h4>{{ pub.title }}</h4>
+                    <p>{{ pub.content }}</p>
+                    <small>Опубліковано: {{ pub.publicate_date }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>У вас немає жодного поста.</p>
+    {% endif %}
+<style>
+    body {
+        background-color: #c46c98;
+        font-family: Verdana, sans-serif;
+
+        }
+
+
+    .list_group {
+            color: #f29bc7;
+            font-size: 20px;
+        }
+
+    .list-group-item {
+         background-color: #c46c98;
+         border: none;
+    }
+
+    a {
+       color: #f29bc7;
+
+    }
+    a:hover {
+            color: #633054;
+        }
+    </style>
+{% endblock %}

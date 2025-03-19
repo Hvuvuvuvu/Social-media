@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <style>
+    body {
+        background-color: #c46c98;
+
+        }
+
+    h1 {
+    
+    font-family: Verdana, sans-serif;
+    }
+
+    .list_group {
+            color: #3D8D7A;
+            font-size: 20px;
+        }
+
+    .list-group-item {
+         background-color: #c46c98;
+         border: none;
+    }
+
+    a {
+       color: #f29bc7;
+
+    }
+
+    a:hover {
+            color: #633054;
+        }
+    </style>
+    <h1>Додати новий пост</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>*A hit: year-month-day</p>
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'pub_list' %}">Вернутись в список Постів</a>
+{% endblock %}
+

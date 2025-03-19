@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+
+{% block content %}
+     <style>
+    body {
+        background-color: #c46c98;
+
+        }
+
+    h1 {
+
+    font-family: Verdana, sans-serif;
+    }
+
+    .list_group {
+            color: #3D8D7A;
+            font-size: 20px;
+        }
+
+    .list-group-item {
+         background-color: #c46c98;
+         border: none;
+    }
+
+    a {
+       color: #f29bc7;
+
+    }
+
+    a:hover {
+            color: #633054;
+        }
+
+    .add_comment {
+            color: #f29bc7;
+        }
+    </style>
+    <h1>Are you sure you want to delete "{{ pub.title }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+    <a href="{% url 'pub_list' %}">Back to List</a>
+{% endblock %}

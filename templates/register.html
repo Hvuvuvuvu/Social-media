@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h2>Register</h2>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+</form>
+<style>
+    body {
+    background-color: #c46c98;
+
+        }
+
+    h1 {
+
+    font-family: Verdana, sans-serif;
+    }
+
+    .list_group {
+            color: #3D8D7A;
+            font-size: 20px;
+        }
+
+    .list-group-item {
+         background-color: #c46c98;
+         border: none;
+    }
+
+    a {
+       color: #f29bc7;
+
+    }
+
+    a:hover {
+            color: #633054;
+        }
+
+
+    </style>
+{% endblock %}
